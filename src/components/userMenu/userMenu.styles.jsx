@@ -19,6 +19,8 @@ export const Button = styled.button`
   background-color: transparent;
   color: var(--accent-color);
 
+  transition: all 0.25s ease-out;
+
   &:hover,
   &:focus {
     background-color: #4a4a4a;

@@ -3,7 +3,7 @@ import { List, Item, DelButton, Name, Number } from './ContactsList.styles';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts/';
-import Spiner from 'components/Spineer/Spineer';
+// import Spiner from 'components/Spineer/Spineer';
 
 const ContactsList = () => {
   const contacts = useSelector(contactsSelectors.getFiltredContacts);
@@ -21,7 +21,7 @@ const ContactsList = () => {
               <Number>{`${cont.number}`}</Number>
             </p>
             <DelButton onClick={() => dispatch(contactsOperations.deleteContact(cont.id))}>
-              <Spiner />
+              {/* <Spiner /> */}
               <span className="material-icons-round">delete_forever</span>
             </DelButton>
           </Item>

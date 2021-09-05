@@ -8,7 +8,7 @@ import PrivateRoute from './components/PrivatRoute';
 import PublicRoute from 'components/PublicRoute';
 
 const HomePage = lazy(() =>
-  import('./vievs/HomePage.js' /* webpackChunkName: "home-page" */),
+  import('./vievs/Homepage/HomePage.jsx' /* webpackChunkName: "home-page" */),
 );
 const LoginPage = lazy(() =>
   import('./vievs/LoginPage' /* webpackChunkName: "login-page" */),
