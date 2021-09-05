@@ -33,9 +33,9 @@ function App() {
       <>
         <AppBar />
 
-        <Suspense fallback={'...Loading'}>
+        <Suspense fallback = {null} >
           <Switch>
-            <PublicRoute exact path="/">
+            <PublicRoute exact path="/" restricted>
               <HomePage />
             </PublicRoute>
 
@@ -50,6 +50,10 @@ function App() {
             <PrivateRoute path="/contacts">
               <ContactsPage />
             </PrivateRoute>
+
+            <PublicRoute restricted>
+              <HomePage />
+            </PublicRoute>
           </Switch>
         </Suspense>
       </>

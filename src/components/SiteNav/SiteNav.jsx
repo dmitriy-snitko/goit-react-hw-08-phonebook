@@ -1,14 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { SiteNavLink, Nav } from "./SiteNav.styles"
 
 export default function SiteNav() {
   return (
-    <nav>
-      <NavLink exact to="/login" >
+    <Nav>
+      <SiteNavLink to="/login" >
         Log in
-      </NavLink>
-      <NavLink exact to="/register" >
+      </SiteNavLink>
+      <SiteNavLink to="/register" >
         Sign up
-      </NavLink>
-    </nav>
+      </SiteNavLink>
+    </Nav>
   )
 }

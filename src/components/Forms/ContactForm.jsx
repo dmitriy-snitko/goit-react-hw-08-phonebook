@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Form, SubmitBtn, Title } from './Form.styles';
+import { Form, SubmitBtn, Title, Input } from './Form.styles';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 
 function ContactForm() {
@@ -45,7 +45,7 @@ function ContactForm() {
     <Form onSubmit={handleSubmit}>
       <label>
         <Title>Name: </Title>
-        <input
+        <Input
           type="text"
           name="name"
           value={name}
@@ -59,7 +59,7 @@ function ContactForm() {
 
       <label>
         <Title>Number: </Title>
-        <input
+        <Input
           type="tel"
           name="number"
           value={number}
@@ -70,7 +70,7 @@ function ContactForm() {
           required
         />
       </label>
-      <SubmitBtn type="submit">Add Contact</SubmitBtn>
+      <SubmitBtn type="submit"><span className="material-icons-round">person_add_alt</span>&nbsp;Add</SubmitBtn>
     </Form>
   )
 };

@@ -1,28 +1,32 @@
 import React from 'react';
-import { List, Item } from './ContactsList.styles';
+import { List, Item, DelButton, Name, Number } from './ContactsList.styles';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts/';
+import Spiner from 'components/Spineer/Spineer';
 
 const ContactsList = () => {
   const contacts = useSelector(contactsSelectors.getFiltredContacts);
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
   useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   return (
     <List>
-      {!contacts.length
-        ? <p>Contact list is empty for now</p>
-        : contacts.map(cont => {
-          return (
-            <Item key={cont.id}>
-              <p>{`${cont.name}: ${cont.number}`}</p>
-              <button onClick={() => dispatch(contactsOperations.deleteContact(cont.id))}>Delete</button>
-            </Item>
-          )
-        })
-      }
+      {contacts.map(cont => {
+        return (
+          <Item key={cont.id}>
+            <p>
+              <Name>{`${cont.name}: `}</Name>
+              <Number>{`${cont.number}`}</Number>
+            </p>
+            <DelButton onClick={() => dispatch(contactsOperations.deleteContact(cont.id))}>
+              <Spiner />
+              <span className="material-icons-round">delete_forever</span>
+            </DelButton>
+          </Item>
+        )
+      })}
     </List>
   );
 };
