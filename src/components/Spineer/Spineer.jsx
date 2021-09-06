@@ -9,7 +9,7 @@ export default function Spiner() {
         color="#4a4a4a"
         height={22}
         width={22}
-        timeout={3000} //3 secs
+        timeout={3000}
       />
     </SpinerContainer>
   );

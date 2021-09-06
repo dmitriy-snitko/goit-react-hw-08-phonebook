@@ -3,6 +3,7 @@ import { Form, Title, SubmitBtn, Input } from "./Form.styles";
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth";
 import { Container } from "App.styles";
+import { ToastContainer } from "react-toastify";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -62,6 +63,7 @@ export default function LoginForm() {
         </label>
         <SubmitBtn type="submit">Log in</SubmitBtn>
       </Form>
+      <ToastContainer />
     </Container>
   )
 }

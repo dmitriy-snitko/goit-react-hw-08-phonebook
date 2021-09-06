@@ -3,12 +3,15 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Form, SubmitBtn, Title, Input } from './Form.styles';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
+import { ToastContainer } from 'react-toastify';
+import { warning } from 'utils/Notification';
 
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(contactsSelectors.getContacts);
   const dispatch = useDispatch();
+  
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -32,8 +35,7 @@ function ContactForm() {
     const isAlreadyinContacts = contacts.find(el => el.name.toLowerCase() === normalizedName);
 
       if (isAlreadyinContacts) {
-        alert(`${name} is already in contacts!`);
-        return;
+        return warning('Contact already exists');
     };
 
     dispatch(contactsOperations.addContact({ name, number }));
@@ -71,6 +73,7 @@ function ContactForm() {
         />
       </label>
       <SubmitBtn type="submit"><span className="material-icons-round">person_add_alt</span>&nbsp;Add</SubmitBtn>
+      <ToastContainer />
     </Form>
   )
 };

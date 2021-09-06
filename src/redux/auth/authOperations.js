@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as phonebookApi from 'services/phonebookApi';
+import { warning } from "utils/Notification";
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -9,7 +10,7 @@ export const register = createAsyncThunk(
 
       return data;
     } catch (error) {
-      alert('account already exists');
+      warning('account already exists');
       return rejectWithValue();
     };
   },
@@ -24,6 +25,7 @@ export const logIn = createAsyncThunk(
       return data;
 
     } catch (error) {
+      warning('incorrect email or password');
       return rejectWithValue();
     };
   },

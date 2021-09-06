@@ -10,9 +10,11 @@ export const Form = styled.form`
   grid-template-columns: 1fr;
   gap: 25px;
 
-  border: 1px solid black;
+  border: 1px solid #808080;
 
   background-color: var(--white-color);
+
+  box-shadow: 2px 2px 5px 0px #909090;
 
   @media screen and (min-width: 491px) {
     width: 450px;

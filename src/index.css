@@ -1,5 +1,6 @@
 @import 'modern-normalize/modern-normalize.css';
 @import 'material-icons/iconfont/material-icons.css';
+@import 'react-toastify/dist/ReactToastify.css';
 
 :root {
   --black-color: #000000;

@@ -11,6 +11,10 @@ margin-bottom: 15px;
 `
 export const Input = styled.input`
   width: 100%;
+  height: 30px;
+  border-style: none;
+
+  box-shadow: 2px 2px 5px 0px #909090;
 `
 
 export const Title = styled.p`

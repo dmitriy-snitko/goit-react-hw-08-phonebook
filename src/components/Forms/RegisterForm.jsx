@@ -3,6 +3,7 @@ import { Form, SubmitBtn, Title, Input } from './Form.styles';
 import { Container } from "App.styles";
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/authOperations";
+import { ToastContainer } from "react-toastify";
 
 export default function RegisterForm() {
   const [name, setName] = useState('');
@@ -83,6 +84,7 @@ export default function RegisterForm() {
 
         <SubmitBtn type="submit">Sign up</SubmitBtn>
       </Form>
+      <ToastContainer />
     </Container>
   )
 };

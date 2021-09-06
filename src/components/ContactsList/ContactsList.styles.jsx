@@ -4,6 +4,8 @@ export const List = styled.ul`
   margin: 0 auto;
   list-style: none;
 
+  box-shadow: 2px 2px 5px 0px #909090;
+
   @media screen and (min-width: 491px) {
     width: 450px;
   }
@@ -16,12 +18,14 @@ export const Item = styled.li`
   height: 30px;
   padding-left: 7px;
 
-  border-bottom: 1px solid #4a4a4a;
-
   background-color: var(--white-color);
 
   &:nth-of-type(2n) {
     background-color: #e8e5dd;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #808080;
   }
 `
 
